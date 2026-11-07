@@ -112,9 +112,32 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 @media(max-width:760px){.g4,.g3{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.hero h1{font-size:31px}.doc{flex-direction:column;text-align:center}}
 @media(max-width:460px){.g4,.g3{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+
+/* ===== v5 motion graphics ===== */
+#scrollbarTop{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),#2b93a5,var(--tertiary));width:0;z-index:99}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(18px);animation:wordUp .7s var(--ease) forwards}
+@keyframes wordUp{to{opacity:1;transform:none}}
+.tooth{animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.tooth .eye{transform-origin:center;animation:blink 4.6s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.sparkle{animation:twinkle 2.4s ease-in-out infinite}
+.sparkle.s2{animation-delay:1.2s}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+.ticker{background:var(--primary);color:#dceef0;overflow:hidden;padding:11px 0}
+.ticker .t-track{display:flex;gap:0;width:max-content;animation:scrollx 26s linear infinite;font-weight:600;font-size:14px;letter-spacing:.4px;white-space:nowrap}
+.ticker span{padding:0 18px}
+.stars-anim{display:inline-block;background:linear-gradient(90deg,#b08a00 50%,#d8d2c0 50%);background-size:200% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;transition:background-position 1.4s var(--ease)}
+.stars-anim.in{background-position:0 0}
+.sticky .pulse{position:relative}
+.sticky .pulse::after{content:"";position:absolute;inset:-3px;border-radius:999px;border:2px solid rgba(18,140,75,.55);animation:pulseRing 2s ease-out infinite}
+@keyframes pulseRing{0%{transform:scale(.96);opacity:1}100%{transform:scale(1.12);opacity:0}}
+.btn-wa.hero-cta{animation:ctaGlow 2.8s ease-in-out infinite}
+@keyframes ctaGlow{0%,100%{box-shadow:0 4px 14px rgba(18,140,75,.35)}50%{box-shadow:0 6px 26px rgba(18,140,75,.65)}}
 </style>
 </head>
 <body>
+<div id="scrollbarTop"></div>
 
 <div class="topbar"><span class="brand"><span class="logo-dot">S</span>Dr. Ganesha's Smiles For All</span><a href="tel:+919825411395" style="background:var(--primary);color:#fff;font-weight:600;padding:9px 16px;border-radius:999px;font-size:13.5px">Call the clinic</a></div>
 <div class="offer">Consultation ₹400 &nbsp;·&nbsp; Open all 7 days &nbsp;·&nbsp; South Bopal, Ahmedabad</div>
@@ -122,12 +145,24 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 <header class="hero">
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="wrap inner">
-    <span class="pill">★ 5.0 rated · 483+ Google reviews</span>
+    <div class="tooth" style="margin-bottom:10px">
+<svg width="86" height="80" viewBox="0 0 100 94" aria-hidden="true">
+  <path d="M50 8c-6-5-14-7-22-5C16 6 9 16 10 28c1 9 4 14 6 22 2 9 3 20 5 27 1 6 8 7 11 2 4-6 6-13 9-19 2-4 6-6 9-6s7 2 9 6c3 6 5 13 9 19 3 5 10 4 11-2 2-7 3-18 5-27 2-8 5-13 6-22C91 16 84 6 72 3 64 1 56 3 50 8z" fill="#ffffff"/>
+  <circle class="eye" cx="36" cy="38" r="4.4" fill="#06333c"/>
+  <circle class="eye" cx="64" cy="38" r="4.4" fill="#06333c"/>
+  <path d="M38 54c4 4 8 6 12 6s8-2 12-6" stroke="#06333c" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <circle cx="28" cy="49" r="4" fill="#f4b8c1" opacity=".75"/>
+  <circle cx="72" cy="49" r="4" fill="#f4b8c1" opacity=".75"/>
+  <path class="sparkle" d="M84 6l1.8 4.6L90 12l-4.2 1.4L84 18l-1.8-4.6L18 12l4.2-1.4z" fill="#f2e295" transform="translate(0,0) scale(0.9)"/>
+  <path class="sparkle s2" d="M12 2l1.3 3.4L16.5 6.7l-3.2 1.3L12 11.4 10.7 8 7.5 6.7l3.2-1.3z" fill="#b7e5ee"/>
+</svg>
+</div>
+<span class="pill">★ 5.0 rated · 483+ Google reviews</span>
     <h1>Dental treatment for the entire family, under one roof</h1>
     <p class="sub">Children's dentistry and family care led by a specialist with 26 years of experience — gentle, honest, and priced clearly.</p>
     <p class="cred">Dr. Ganesha M. · BDS, MDS (Paedodontics &amp; Preventive Dentistry), FAGE</p>
     <div class="cta-row">
-      <a class="btn btn-wa" href="#booking">Book an appointment</a>
+      <a class="btn btn-wa hero-cta" href="#booking">Book an appointment</a>
       <a class="btn btn-white" href="tel:+919825411395">Call +91 98254 11395</a>
     </div>
   </div>
@@ -142,6 +177,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
   </div>
 </div>
 
+<div class="ticker" aria-hidden="true"><div class="t-track" id="tTrack"><span>CHILDREN'S DENTISTRY ✦ PREVENTIVE CARE ✦ ROOT CANAL TREATMENT ✦ FAMILY DENTISTRY ✦ CONSULTATION ₹400 ✦ OPEN ALL 7 DAYS ✦ </span></div></div>
 <section class="blk"><div class="wrap">
   <h2 data-reveal>Why families choose Smiles For All</h2>
   <p class="lede" data-reveal>A specialist clinic, not a general setup — children's dentistry is the doctor's own field of mastery.</p>
@@ -214,7 +250,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </div></section>
 
 <section class="blk"><div class="wrap">
-  <h2 data-reveal>What patients say</h2>
+  <h2 data-reveal>What patients say <span class="stars-anim" id="starsAnim">★★★★★</span></h2>
   <p class="lede" data-reveal>A perfect 5.0 on Google, and 90% recommendation across 119 ratings on Lybrate.</p>
 </div>
 <div class="marquee"><div class="rev-track" id="revTrack">
@@ -269,7 +305,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </footer>
 
 <div class="sticky">
-  <a href="https://wa.me/919825411395?text=Hello%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment." style="background:var(--wa);color:#fff">Book on WhatsApp</a>
+  <a class="pulse" href="https://wa.me/919825411395?text=Hello%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment." style="background:var(--wa);color:#fff">Book on WhatsApp</a>
   <a href="tel:+919825411395" style="background:var(--primary);color:#fff">Call the clinic</a>
 </div>
 
@@ -345,6 +381,22 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
     });
   });
 })();
+
+  /* v5: headline word stagger */
+  var h1=document.querySelector('.hero h1');
+  if(h1){ h1.innerHTML=h1.textContent.trim().split(/\s+/).map(function(w,i){return '<span class="w" style="animation-delay:'+(i*70)+'ms">'+w+'</span>'}).join(' '); }
+  /* v5: scroll progress + hero parallax */
+  var bar=document.getElementById('scrollbarTop'), blobs=document.querySelectorAll('.blob');
+  addEventListener('scroll',function(){
+    var y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.width=(h>0?(y/h*100):0)+'%';
+    blobs.forEach(function(b,i){ b.style.marginTop=(y*(0.05+i*0.03))+'px'; });
+  },{passive:true});
+  /* v5: stars fill when reviews section nears */
+  var so=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); so.disconnect(); } }); },{threshold:.4});
+  var sa=document.getElementById('starsAnim'); if(sa) so.observe(sa);
+  /* v5: ticker loop */
+  var tt=document.getElementById('tTrack'); if(tt) tt.innerHTML+=tt.innerHTML;
 </script>
 </body>
 </html>
