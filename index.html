@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Ganesha's Smiles For All — Dental Clinic, South Bopal, Ahmedabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <meta name="description" content="Dental treatment for the entire family under one roof. Dr. Ganesha M., MDS — 26 years of experience, rated 5.0 from 483+ Google reviews. South Bopal, Ahmedabad. Consultation ₹400.">
 <style>
 /* ===== Material 3 tokens (seed: clinic teal; tertiary: gold) ===== */
@@ -134,6 +136,32 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 @keyframes pulseRing{0%{transform:scale(.96);opacity:1}100%{transform:scale(1.12);opacity:0}}
 .btn-wa.hero-cta{animation:ctaGlow 2.8s ease-in-out infinite}
 @keyframes ctaGlow{0%,100%{box-shadow:0 4px 14px rgba(18,140,75,.35)}50%{box-shadow:0 6px 26px rgba(18,140,75,.65)}}
+
+/* ===== MotionSites enhancement pass (candidate, NOT the locked v5) ===== */
+body{font-family:Roboto,'Segoe UI',system-ui,Arial,sans-serif}
+h1,h2,.stat .big,.doc h3{font-family:Fraunces,Georgia,serif}
+.hero h1{font-size:clamp(38px,7.2vw,58px);font-weight:500;letter-spacing:-.5px;line-height:1.06}
+h2{font-weight:500;letter-spacing:-.3px}
+.hero{padding:74px 0 104px;background:linear-gradient(158deg,#0d6a7a 0%,#08434f 58%,#052e37 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.09) 50%,transparent 58%);background-size:280% 100%;animation:sheen 7s ease-in-out infinite;pointer-events:none}
+@keyframes sheen{0%,55%{background-position:130% 0}90%,100%{background-position:-60% 0}}
+.pill{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.stats{background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.65)}
+.kicker{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:2.6px;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+.kicker::before{content:"";width:30px;height:2px;background:var(--tertiary);border-radius:2px}
+.card{position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:-45% -25% auto;height:75%;background:radial-gradient(closest-side,rgba(11,85,99,.14),transparent);opacity:0;transition:opacity .5s var(--ease);pointer-events:none}
+.card:hover::before{opacity:1}
+.card .ic{background:linear-gradient(140deg,var(--surf-3),var(--secondary-c))}
+/* dark cinematic reviews band */
+.darkband{background:linear-gradient(170deg,#07323b,#052228);border-radius:28px;padding:38px 0 30px;margin:0 10px}
+.darkband h2,.darkband .lede{color:#e6f2f1}
+.darkband .lede{color:#9fc3c7}
+.darkband .rev-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);backdrop-filter:blur(6px)}
+.darkband .rev-card p{color:#d7e8ea}
+.darkband .rev-card .who{color:#8fb5ba}
+.darkband .kicker{color:#7fd4c1}
+.btn{box-shadow:0 2px 10px rgba(6,51,60,.14)}
 </style>
 </head>
 <body>
@@ -179,6 +207,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 
 <div class="ticker" aria-hidden="true"><div class="t-track" id="tTrack"><span>CHILDREN'S DENTISTRY ✦ PREVENTIVE CARE ✦ ROOT CANAL TREATMENT ✦ FAMILY DENTISTRY ✦ CONSULTATION ₹400 ✦ OPEN ALL 7 DAYS ✦ </span></div></div>
 <section class="blk"><div class="wrap">
+  <div class="kicker" data-reveal>The clinic</div>
   <h2 data-reveal>Why families choose Smiles For All</h2>
   <p class="lede" data-reveal>A specialist clinic, not a general setup — children's dentistry is the doctor's own field of mastery.</p>
   <div class="grid g4">
@@ -190,6 +219,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </div></section>
 
 <section class="blk"><div class="wrap">
+  <div class="kicker" data-reveal>Care</div>
   <h2 data-reveal>Treatments</h2>
   <p class="lede" data-reveal>Complete care for every smile in the family — children first, and everyone else too.</p>
   <div class="grid g4">
@@ -201,6 +231,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </div></section>
 
 <section class="blk"><div class="wrap">
+  <div class="kicker" data-reveal>Honest pricing</div>
   <h2 data-reveal>Know your cost before you sit in the chair</h2>
   <div class="grid g3">
     <div class="card" data-reveal><h3>Consultation</h3><p>Full examination and a clear explanation of what is needed.</p><span class="price-tag">₹400 flat</span></div>
@@ -210,6 +241,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </div></section>
 
 <section class="blk" id="booking"><div class="wrap">
+  <div class="kicker" data-reveal>Booking</div>
   <h2 data-reveal>Request an appointment in three taps</h2>
   <p class="lede" data-reveal>Slide through, and your request lands on the clinic's WhatsApp — pre-written, ready to send.</p>
   <div class="book" data-reveal>
@@ -249,7 +281,8 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
   </div>
 </div></section>
 
-<section class="blk"><div class="wrap">
+<section class="blk"><div class="darkband"><div class="wrap">
+  <div class="kicker" data-reveal>Reviews</div>
   <h2 data-reveal>What patients say <span class="stars-anim" id="starsAnim">★★★★★</span></h2>
   <p class="lede" data-reveal>A perfect 5.0 on Google, and 90% recommendation across 119 ratings on Lybrate.</p>
 </div>
@@ -259,10 +292,11 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
   <div class="rev-card"><div class="stars">★★★★★</div><p>90% of patients recommend Dr. Ganesha, across 119 ratings on Lybrate.</p><div class="who">LYBRATE · 119 RATINGS</div></div>
   <div class="rev-card"><div class="stars">★★★★★</div><p>26 years of practice — generations of South Bopal families treated under one roof.</p><div class="who">SINCE OVER TWO DECADES</div></div>
   <div class="rev-card"><div class="stars">★★★★★</div><p>Read every review yourself — then decide.</p><div class="who"><a href="https://www.google.com/maps/search/?api=1&query=Dr.+Ganesha's+Smiles+For+All+South+Bopal+Ahmedabad" style="color:var(--primary);font-weight:700">ALL REVIEWS ON GOOGLE →</a></div></div>
-</div></div>
+</div></div></div>
 </section>
 
 <section class="blk"><div class="wrap">
+  <div class="kicker" data-reveal>Your doctor</div>
   <h2 data-reveal>Meet your doctor</h2>
   <div class="doc" data-reveal>
     <div class="avatar">G</div>
@@ -274,6 +308,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </div></section>
 
 <section class="blk"><div class="wrap">
+  <div class="kicker" data-reveal>Find us</div>
   <h2 data-reveal>Visit the clinic</h2>
   <div class="grid g2">
     <div class="card" data-reveal>
@@ -290,6 +325,7 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
 </div></section>
 
 <section class="blk"><div class="wrap">
+  <div class="kicker" data-reveal>Questions</div>
   <h2 data-reveal>Everything patients ask us first</h2>
   <div class="faq-item" data-reveal><button class="faq-q">What does a consultation cost?<span class="chev">▾</span></button><div class="faq-a"><p>₹400 — and your full treatment cost is explained in writing before any treatment begins.</p></div></div>
   <div class="faq-item" data-reveal><button class="faq-q">Do I need an appointment, or can I walk in?<span class="chev">▾</span></button><div class="faq-a"><p>Walk-ins are welcome during clinic hours. Booking on WhatsApp first guarantees your slot and skips the wait.</p></div></div>
@@ -369,6 +405,8 @@ footer{text-align:center;color:var(--on-surf-var);font-size:13px;padding:40px 18
     window.open('https://wa.me/919825411395?text='+encodeURIComponent(msg),'_blank');
   });
   render();
+  /* failsafe: force-reveal everything after 2.8s no matter what */
+  setTimeout(function(){ document.querySelectorAll('[data-reveal]').forEach(function(el){ el.classList.add('in'); }); }, 2800);
   /* reviews marquee: duplicate for seamless loop */
   var track=document.getElementById('revTrack'); track.innerHTML += track.innerHTML;
   /* faq accordion */
